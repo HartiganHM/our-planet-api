@@ -1,0 +1,21 @@
+{
+  "name": "our-planet-api-v2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm run build",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "fastify": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.0",
+    "typescript": "^5.7.3"
+  }
+}
