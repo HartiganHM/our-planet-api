@@ -14,10 +14,11 @@ datasource db {
 }
 
 model Continent {
-  id     Int      @id @default(autoincrement())
-  name   String   @unique
-  bio    String   @db.Text
-  Animal Animal[]
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  bio       String   @db.Text
+  image_url String
+  Animal    Animal[]
 }
 
 model Animal {
