@@ -1,8 +1,13 @@
 import fastify from 'fastify';
+import path from 'path';
+const autoload = require('@fastify/autoload');
 
 const server = fastify();
 
-server.register(import('./routes/root'));
+server.register(autoload, {
+  dir: path.join(__dirname, 'routes'),
+  options: { prefix: 'api' },
+});
 
 server.listen({ port: 8080 }, (err, address) => {
   if (err) {
