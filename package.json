@@ -3,16 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "prebuild": "rm -rf dist",
     "prestart": "npm run build",
     "build": "tsc -p tsconfig.json",
-    "start": "nodemon dist/index.js",
-    "migrate": "prisma migrate dev"
+    "start": "nodemon",
+    "migrate": "prisma migrate dev",
+    "seed": "prisma db seed"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed/seed.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@fastify/autoload": "^6.1.0",
     "@prisma/client": "^6.3.0",
     "fastify": "^5.2.1"
   },
@@ -20,6 +26,7 @@
     "@types/node": "^22.13.0",
     "nodemon": "^3.1.9",
     "prisma": "^6.3.0",
+    "ts-node": "^10.9.2",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }
