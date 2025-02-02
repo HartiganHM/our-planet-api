@@ -1,9 +1,14 @@
 import fastify from 'fastify';
+import cors from '@fastify/cors';
 import path from 'path';
-const autoload = require('@fastify/autoload');
+import autoload from '@fastify/autoload';
 
 const server = fastify();
 
+server.register(cors, {
+  origin: '*',
+  methods: ['GET'],
+});
 server.register(autoload, {
   dir: path.join(__dirname, 'routes'),
   options: { prefix: 'api' },
