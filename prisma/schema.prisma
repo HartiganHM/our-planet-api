@@ -31,6 +31,7 @@ model Animal {
   weight          String
   length          String
   habitat         String
+  image_url       String
   facts           String    @db.Text
   human_benefit   String    @db.Text
   continent       Continent @relation(fields: [continent_id], references: [id])
